@@ -6,7 +6,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import java.util.Random;
 
 public class Player extends Thread{
-    public final static int MAX_LIFES = 13;
+    public final static int MAX_LIFES = 7;
     private static boolean WON = true;
 
     private Game game;
