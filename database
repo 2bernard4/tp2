@@ -1,0 +1,35 @@
+#drop database tp2;
+create database if not exists tp2;
+
+use tp2;
+
+Set global time_zone = '-3:00' ;
+
+#drop table words
+create table if not exists words(
+idWord int not null auto_increment,
+word varchar(50),
+length int not null default 0,
+constraint `PK-IdWord` primary key (idWord));
+    
+select * from words;    
+   
+#drop table winners   
+create table if not exists winners(
+idWinner int not null auto_increment,
+nameWinner varchar(50),
+guessedWord varchar(50),
+dateWinner date,
+constraint `PK-IdWinners` primary key(idWinner));
+
+select * from winners;
+
+
+DROP TRIGGER TUB_CALCULATE_LENGTH;
+DELIMITER $$
+CREATE TRIGGER TUB_CALCULATE_LENGTH BEFORE INSERT ON words FOR EACH ROW
+BEGIN
+    set new.length = (select length(new.word));
+END $$
+
+insert into words (word) values ('banana'), ('programming'), ('house'), ('boat'), ('hangman');
