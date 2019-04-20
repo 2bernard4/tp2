@@ -69,6 +69,12 @@ public class Jbdc {
     public void insertWinnerBdd(Player player, Word word){
         Connection conn = null;
         Statement stmt = null;
+        java.util.Date dt = new java.util.Date();
+
+        java.text.SimpleDateFormat sdf =
+                new java.text.SimpleDateFormat("yyyy-MM-dd");
+
+        String currentTime = sdf.format(dt);
         try{
             //STEP 2: Register JDBC driver
             Class.forName(JDBC_DRIVER);
@@ -78,12 +84,13 @@ public class Jbdc {
 
             //STEP 4: Execute a query
 
-            stmt = conn.prepareStatement("INSERT INTO winners(nameWinner, guessedWord) "
-                    + "VALUES(?,?)");
+            stmt = conn.prepareStatement("INSERT INTO winners(nameWinner, guessedWord, dateWinner) "
+                    + "VALUES(?,?,?)");
 
             // Insert first record
             ((PreparedStatement) stmt).setString(1, player.getPlayerName());
             ((PreparedStatement) stmt).setString(2, word.getWord());
+            ((PreparedStatement) stmt).setString(3, currentTime);
             ((PreparedStatement) stmt).executeUpdate();
 
 
