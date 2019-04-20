@@ -6,7 +6,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import java.util.Random;
 
 public class Player extends Thread{
-    public final static int MAX_LIFES = 7;
+    public final static int MAX_LIFES = 10;
     private static boolean WON = true;
 
     private Game game;
@@ -32,9 +32,7 @@ public class Player extends Thread{
 
     @Override
     public void run() {
-
         while (this.lives > 0 && WON){
-            System.out.println(WON);
             game.play(this);
         }
     }
@@ -50,6 +48,10 @@ public class Player extends Thread{
 
     public String getPlayerName() {
         return playerName;
+    }
+
+    public void setPlayerName(String name) {
+        this.playerName = name;
     }
 
     public int getLives() {
