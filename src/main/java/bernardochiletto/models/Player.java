@@ -52,10 +52,6 @@ public class Player extends Thread{
         return playerName;
     }
 
-    public void setPlayerName(String name) {
-        this.playerName = name;
-    }
-
     public int getLives() {
         return lives;
     }

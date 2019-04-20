@@ -62,7 +62,6 @@ public class Jbdc {
                 se.printStackTrace();
             }//end finally try
         }//end try
-
         return word;
     }
 
