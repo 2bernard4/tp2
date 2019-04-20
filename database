@@ -13,11 +13,13 @@ length int not null default 0,
 constraint `PK-IdWord` primary key (idWord));
     
 select * from words;    
-    
+   
+#drop table winners   
 create table if not exists winners(
 idWinner int not null auto_increment,
 nameWinner varchar(50),
 guessedWord varchar(50),
+dateWinner date,
 constraint `PK-IdWinners` primary key(idWinner));
 
 select * from winners;
