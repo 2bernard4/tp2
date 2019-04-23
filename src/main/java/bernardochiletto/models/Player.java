@@ -35,8 +35,10 @@ public class Player extends Thread{
         while (this.lives > 0 && WON){
             game.play(this);
         }
+        if (this.lives == 0 || !WON ){
+            this.interrupt();
+        }
     }
-
 
     public boolean getWon() {
         return WON;

@@ -35,7 +35,7 @@ public class Game {
             aux = guessWord(player, player.randomLetter());
 
             if (this.word.getLenght() == 0){
-                System.out.println("Congratulations " + player.getPlayerName() + ", you guessed the word it was " + word.getWord());
+                System.out.println("\nCongratulations " + player.getPlayerName() + ", you guessed the word it was " + word.getWord());
                 //aca lo cargaria a la bdd al ganador
                 jbdc.insertWinnerBdd(player, word);
                 player.setWon(false);
@@ -43,7 +43,7 @@ public class Game {
         }
 
         if (player.getLives() == 0){
-            System.out.println("\n" + player.getPlayerName() + " YOU DIED" + " the word was " + word.getWord());
+            System.out.println("\n" + player.getPlayerName() + " YOU DIED");
         }
 
         disponible = false;

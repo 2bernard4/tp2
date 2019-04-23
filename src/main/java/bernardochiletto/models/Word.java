@@ -1,7 +1,5 @@
 package bernardochiletto.models;
 
-import java.util.Random;
-
 public class Word{
     private String word;
     private int lenght;
@@ -26,4 +24,5 @@ public class Word{
     public void setLenght(int lenght) {
         this.lenght = lenght;
     }
+
 }
