@@ -25,9 +25,9 @@ constraint `PK-IdWinners` primary key(idWinner));
 select * from winners;
 
 
-DROP TRIGGER TUB_CALCULATE_LENGTH;
+DROP TRIGGER TIB_CALCULATE_LENGTH;
 DELIMITER $$
-CREATE TRIGGER TUB_CALCULATE_LENGTH BEFORE INSERT ON words FOR EACH ROW
+CREATE TRIGGER TIB_CALCULATE_LENGTH BEFORE INSERT ON words FOR EACH ROW
 BEGIN
     set new.length = (select length(new.word));
 END $$
