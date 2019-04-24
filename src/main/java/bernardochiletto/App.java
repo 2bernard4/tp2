@@ -1,6 +1,7 @@
 package bernardochiletto;
 
 
+import bernardochiletto.controlador.Game;
 import bernardochiletto.models.Player;
 
 import static java.lang.Thread.sleep;

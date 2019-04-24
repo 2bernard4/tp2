@@ -1,6 +1,6 @@
 package bernardochiletto.models;
 
-import bernardochiletto.Game;
+import bernardochiletto.controlador.Game;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.Random;

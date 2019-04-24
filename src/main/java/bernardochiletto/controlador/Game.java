@@ -1,4 +1,4 @@
-package bernardochiletto;
+package bernardochiletto.controlador;
 
 import bernardochiletto.bdd.Jbdc;
 import bernardochiletto.models.Player;
